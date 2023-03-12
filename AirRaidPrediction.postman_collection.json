@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "da509e33-a5a2-4079-9107-69791c56f67e",
+		"name": "AirRaidPrediction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13839375"
+	},
+	"item": [
+		{
+			"name": "WeatherPredictionApi",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Maksym Kasianenko\",\r\n    \"location\": \"Kyiv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.236.161.196:8000/content/api/v1/integration/weather-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"236",
+						"161",
+						"196"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"v1",
+						"integration",
+						"weather-forecast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

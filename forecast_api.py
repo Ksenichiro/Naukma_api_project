@@ -6,8 +6,8 @@ import requests
 
 from flask import Flask, jsonify, request
 
-WEATHER_API_KEY="74XTNUT5DXHJUR3CL88TNDX4K"
-MY_API_TOKEN="123"
+WEATHER_API_KEY=""
+MY_API_TOKEN=""
 
 app = Flask(__name__)
 
