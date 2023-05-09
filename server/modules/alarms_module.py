@@ -1,19 +1,84 @@
-"""
-This module provides methods used for creating new features
-"""
+import requests
+import json
+import datetime
+import os
+import re
+import pickle
+import pytz
 
 import datetime as dt
 import pandas as pd
 import numpy as np
-import pytz
 
 from dateutil import parser
 
-from modules.data_collection import load_history, load_alerts, load_states
 from config import *
 
 def __isNaN(num):
     return num != num
+
+def load_alerts(contentType: str = "application/json"):
+    # Loads list of active alerts in States
+
+    url_base_url = "https://api.ukrainealarm.com"
+    url_api = "api/v3"
+    url_endpoint = "alerts"
+    url_querry_params = ""
+
+    url = f"{url_base_url}/{url_api}/{url_endpoint}?{url_querry_params}"
+
+    payload = {}
+    headers = {
+        "Authorization": ALERTS_API_KEY,
+        "accept": contentType
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    alarms = [alarm['activeAlerts'] for alarm in json.loads(response.text) if alarm['regionType'] == 'State']
+    alarms = sum(alarms, [])
+    return [alarm for alarm in alarms if alarm['type'] == 'AIR']
+
+def load_history(regionId: int, contentType: str = "application/json"):
+    # Loads last 25 alerts in given region (uses alerts-api id system)
+
+    url_base_url = "https://api.ukrainealarm.com"
+    url_api = "api/v3"
+    url_endpoint = "alerts/regionHistory"
+    url_querry_params = f"regionId={regionId}"
+
+    url = f"{url_base_url}/{url_api}/{url_endpoint}?{url_querry_params}"
+
+    payload = {}
+    headers = {
+        "Authorization": ALERTS_API_KEY,
+        "accept": contentType
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    return [alarm for alarm in json.loads(response.text)[0]['alarms'] if alarm['alertType'] == "AIR"]
+
+def load_states(contentType: str = "application/json"):
+    # Loads info on all State regions including their names and ids
+
+    url_base_url = "https://api.ukrainealarm.com"
+    url_api = "api/v3"
+    url_endpoint = "regions"
+    url_querry_params = ""
+
+    url = f"{url_base_url}/{url_api}/{url_endpoint}?{url_querry_params}"
+
+    payload = {}
+    headers = {
+        "Authorization": ALERTS_API_KEY,
+        "accept": contentType
+    }
+
+    response = requests.request("GET", url, headers=headers, data=payload)
+    regions_dict = json.loads(response.text)
+    for state in regions_dict["states"]:
+        state.pop("regionChildIds")
+    return regions_dict['states']
+
 
 __history_cache = {}
 

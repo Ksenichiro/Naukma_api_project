@@ -1,25 +1,19 @@
 {
 	"info": {
-		"_postman_id": "da509e33-a5a2-4079-9107-69791c56f67e",
+		"_postman_id": "c6a1f8fd-ed8a-4114-89f4-be298f155ab4",
 		"name": "AirRaidPrediction",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "13839375"
+		"_exporter_id": "25707370"
 	},
 	"item": [
 		{
-			"name": "WeatherPredictionApi",
+			"name": "Київська Область",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Maksym Kasianenko\",\r\n    \"location\": \"Kyiv\"\r\n}",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Київська\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,21 +21,250 @@
 					}
 				},
 				"url": {
-					"raw": "http://3.236.161.196:8000/content/api/v1/integration/weather-forecast",
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
 					"protocol": "http",
 					"host": [
 						"3",
-						"236",
-						"161",
-						"196"
+						"127",
+						"248",
+						"223"
 					],
 					"port": "8000",
 					"path": [
 						"content",
 						"api",
-						"v1",
-						"integration",
-						"weather-forecast"
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Запорізька Область",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Запорізька\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Донецька Область",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Донецька\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Чернігівська Область",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Чернігівська\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вінницька Область",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Вінницька\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Сумська Область",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"Сумська\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Всі Області",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\",\r\n    \"region\": \"all\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/alarm-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"alarm-forecast"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update forecast",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\": \"123\",\r\n    \"requester_name\": \"Taras Myroniuk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.127.248.223:8000/content/api/relaunch-forecast",
+					"protocol": "http",
+					"host": [
+						"3",
+						"127",
+						"248",
+						"223"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						"api",
+						"relaunch-forecast"
 					]
 				}
 			},

@@ -15,4 +15,26 @@ To set up the project You need to launch 2 api endpoints.
 Examples on how to use both APIs can be found in postman collection `AirRaidPrediction.postman_collection.json`
 
 ## Models
-`.pkl` files for all the models with tuned parameters are provided in model folder. 
+`.pkl` files for all the models with tuned parameters are provided in model folder.
+
+## Deployment
+All filess relevant to deployment a located in the `server` folder. To automaticly deploy code from GitHub recommended using Git **sparse checkout** feature:
+
+```
+git init
+git remote add -f origin <url>
+
+git config core.sparseCheckout true
+echo "server/" >> .git/info/sparse-checkout
+
+git pull origin main
+```
+
+The main application is Flask app in `alarm_api.py`, recommended to use uWSGI:
+
+```
+sudo pip3 install uwsgi
+uwsgi --http 0.0.0.0:8000 --wsgi-file alarm_api.py --callable app --processes 4 --threads 2
+```
+
+Also adviset to use Supervisor (Supervisord) to run the server. Config and launch commands depend on the Supervisor installation.
